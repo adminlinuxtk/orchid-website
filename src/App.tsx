@@ -498,7 +498,7 @@ function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          Design by <a href="https://nousresearch.com" target="_blank" rel="noopener noreferrer">Nous Research</a>
+          Design by Tapash K.
         </div>
       </div>
     </footer>
