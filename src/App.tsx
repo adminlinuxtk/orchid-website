@@ -154,7 +154,7 @@ function Navbar() {
 /* ===== HERO ===== */
 function Hero() {
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero hero-bg">
       <div className="hero-content">
         <h1 className="reveal">You can't always be there.<br />But we can.</h1>
         <p className="reveal reveal-delay-1">We provide services in the comfort of home.</p>
@@ -173,18 +173,23 @@ function About() {
     <section id="about" className="about section">
       <div className="container">
         <h2 className="section-title reveal">About Orchid Home Health Services</h2>
-        <div className="about-content">
-          <p className="reveal reveal-delay-1">
-            Orchid Home Health Services is highest quality home care service provider located in Lancaster Pennsylvania. We provide services to the people who need help on their daily works like cooking, cleaning, bathing etc. Our agency is run by local experts who have many years of experience in the home health profession. We are a licensed, bonded and insured. Quality care, safety and privacy of our client is our main priority. We provide custom care plan for each client's who need specific services.
-          </p>
-          <p className="reveal reveal-delay-2">
-            At Orchid Home Health services, we are available 24/7 for an hourly services to specialized care.
-          </p>
-          <div className="about-badges reveal reveal-delay-3">
-            <span className="about-badge"><IconCheck /> Experienced Caregivers</span>
-            <span className="about-badge"><IconCheck /> State Licensed</span>
-            <span className="about-badge"><IconCheck /> Bonded</span>
-            <span className="about-badge"><IconCheck /> OLTL Approved</span>
+        <div className="about-content-wrapper">
+          <div className="about-image reveal reveal-delay-1">
+            <img src="/orchid-website/images/senior-care.jpg" alt="Caregiver assisting senior" />
+          </div>
+          <div className="about-content">
+            <p className="reveal reveal-delay-1">
+              Orchid Home Health Services is highest quality home care service provider located in Lancaster Pennsylvania. We provide services to the people who need help on their daily works like cooking, cleaning, bathing etc. Our agency is run by local experts who have many years of experience in the home health profession. We are a licensed, bonded and insured. Quality care, safety and privacy of our client is our main priority. We provide custom care plan for each client's who need specific services.
+            </p>
+            <p className="reveal reveal-delay-2">
+              At Orchid Home Health services, we are available 24/7 for an hourly services to specialized care.
+            </p>
+            <div className="about-badges reveal reveal-delay-3">
+              <span className="about-badge"><IconCheck /> Experienced Caregivers</span>
+              <span className="about-badge"><IconCheck /> State Licensed</span>
+              <span className="about-badge"><IconCheck /> Bonded</span>
+              <span className="about-badge"><IconCheck /> OLTL Approved</span>
+            </div>
           </div>
         </div>
       </div>
@@ -224,26 +229,31 @@ function Services() {
       icon: <IconClock />,
       title: 'Hourly Home Care',
       desc: 'Hourly care program allows you to choose your own schedule. Custom plans for each client, adjustable at any time. Our caregivers provide support to normal daily routines on an hourly or as-needed basis.',
+      image: '/orchid-website/images/hero-care.jpg',
     },
     {
       icon: <IconUsers />,
       title: 'Companion Care',
       desc: 'Help with reading, getting mail, running errands, shopping, assistance with social media and email, and more.',
+      image: '/orchid-website/images/companion-care.jpg',
     },
     {
       icon: <IconKitchen />,
       title: 'Homemaker Services',
       desc: 'Meal preparation, laundry, cleaning, changing bed, and more. Supporting safe recovery after hospital discharge.',
+      image: '/orchid-website/images/homemaker.jpg',
     },
     {
       icon: <IconRefresh />,
       title: 'Respite Care',
       desc: 'Short-term or emergency relief for caregivers when they need to take a break or focus on their personal life.',
+      image: '/orchid-website/images/respite-care.jpg',
     },
     {
       icon: <IconUser />,
       title: 'Personal Care',
       desc: 'Medication reminders, bathing assistance, dressing & grooming, transportation assistance, feeding, and more. Specialized care for dementia, stroke recovery, and more.',
+      image: '/orchid-website/images/personal-care.jpg',
     },
   ]
 
@@ -258,8 +268,11 @@ function Services() {
           {services.map((s, i) => (
             <div
               key={s.title}
-              className={`service-card reveal reveal-delay-${Math.min(i + 1, 4)}`}
+              className={`service-card service-card-with-image reveal reveal-delay-${Math.min(i + 1, 4)}`}
             >
+              <div className="service-image">
+                <img src={s.image} alt={s.title} />
+              </div>
               <div className="icon">{s.icon}</div>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
@@ -281,7 +294,7 @@ function WhyChoose() {
   ]
 
   return (
-    <section id="why-choose" className="why-choose section">
+    <section id="why-choose" className="why-choose section why-choose-bg">
       <div className="container">
         <h2 className="section-title reveal">Why Choose Us</h2>
         <p className="why-headline reveal reveal-delay-1">We are always here for you and your loved ones any time, anywhere.</p>
@@ -347,17 +360,22 @@ function Careers() {
       <div className="container">
         <h2 className="section-title reveal">Join Our Team</h2>
         <p className="section-subtitle reveal reveal-delay-1">Make a difference in someone's life every day</p>
-        <div className="careers-content reveal reveal-delay-2">
-          <p>Do you love helping people in their daily life? At Orchid Home Health Services, we are looking for dedicated, caring and helpful caregivers.</p>
-          <p>We are an equal opportunity employer.</p>
-          <div className="careers-benefits">
-            <span>Competitive Salaries</span>
-            <span>Great Benefits</span>
-            <span>Drug-Free Workplace</span>
+        <div className="careers-wrapper">
+          <div className="careers-content reveal reveal-delay-2">
+            <p>Do you love helping people in their daily life? At Orchid Home Health Services, we are looking for dedicated, caring and helpful caregivers.</p>
+            <p>We are an equal opportunity employer.</p>
+            <div className="careers-benefits">
+              <span>Competitive Salaries</span>
+              <span>Great Benefits</span>
+              <span>Drug-Free Workplace</span>
+            </div>
+            <a href="#" className="btn-primary" onClick={(e) => { e.preventDefault(); alert('Application link coming soon! Please call (717) 208-3060 for inquiries.') }}>
+              Apply Now
+            </a>
           </div>
-          <a href="#" className="btn-primary" onClick={(e) => { e.preventDefault(); alert('Application link coming soon! Please call (717) 208-3060 for inquiries.') }}>
-            Apply Now
-          </a>
+          <div className="careers-image reveal reveal-delay-3">
+            <img src="/orchid-website/images/companion-care.jpg" alt="Caregiver providing companion care" />
+          </div>
         </div>
       </div>
     </section>
