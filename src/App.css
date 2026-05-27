@@ -207,20 +207,20 @@
 }
 
 /* ===== HERO ===== */
-.hero-bg {
+.hero.hero-bg {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('/orchid-website/images/hero-care.jpg') center center / cover no-repeat;
 }
 
-.hero-bg::before,
-.hero-bg::after {
+.hero.hero-bg::before,
+.hero.hero-bg::after {
   display: none;
 }
 
-.hero-bg .hero-content h1 {
+.hero.hero-bg .hero-content h1 {
   color: #fff;
 }
 
-.hero-bg .hero-content p {
+.hero.hero-bg .hero-content p {
   color: rgba(255,255,255,0.9);
 }
 
@@ -638,19 +638,19 @@
   position: relative;
 }
 
-.why-choose-bg {
+.why-choose.why-choose-bg {
   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55)), url('/orchid-website/images/senior-care.jpg') center center / cover no-repeat fixed;
 }
 
-.why-choose-bg .section-title {
+.why-choose.why-choose-bg .section-title {
   color: #fff;
 }
 
-.why-choose-bg .why-headline {
+.why-choose.why-choose-bg .why-headline {
   color: rgba(255,255,255,0.85);
 }
 
-.why-choose-bg .why-card {
+.why-choose.why-choose-bg .why-card {
   background: rgba(255,255,255,0.95);
 }
 
