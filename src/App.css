@@ -74,7 +74,8 @@
 }
 
 .navbar-links a:hover,
-.navbar-links a:focus-visible {
+.navbar-links a:focus-visible,
+.navbar-links a.active {
   color: var(--primary);
   background: var(--primary-bg);
 }
@@ -187,7 +188,8 @@
 }
 
 .navbar-mobile a:hover,
-.navbar-mobile a:focus-visible {
+.navbar-mobile a:focus-visible,
+.navbar-mobile a.active {
   background: var(--primary-bg);
   color: var(--primary);
 }
@@ -230,7 +232,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, #E8F4F5 0%, #f0f7f8 40%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #E3F2FD 0%, #f0f7f8 40%, #f8f9fa 100%);
   overflow: hidden;
   padding: 0 24px;
 }
@@ -242,7 +244,7 @@
   right: -30%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(20,145,155,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,151,178,0.06) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -789,7 +791,7 @@
 
 /* ===== CAREERS ===== */
 .careers {
-  background: linear-gradient(135deg, var(--primary-dark), #0a5e61);
+  background: linear-gradient(135deg, var(--primary-dark), #004AAD);
   color: white;
 }
 

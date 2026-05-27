@@ -6,7 +6,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -49,10 +48,10 @@ input, textarea {
 
 /* ===== VARIABLES ===== */
 :root {
-  --primary-dark: #0D7377;
-  --primary: #14919B;
-  --primary-light: #1DB7C2;
-  --primary-bg: #E8F4F5;
+  --primary-dark: #004AAD;
+  --primary: #0097B2;
+  --primary-light: #00B4D8;
+  --primary-bg: #E3F2FD;
   --accent: #E8A87C;
   --accent-hover: #E08F5A;
   --accent-light: #FFF3EB;
@@ -61,7 +60,7 @@ input, textarea {
   --text-muted: #b2bec3;
   --bg-white: #ffffff;
   --bg-light: #f8f9fa;
-  --bg-dark: #0D7377;
+  --bg-dark: #004AAD;
   --border-light: #e9ecef;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --shadow-md: 0 4px 20px rgba(0,0,0,0.08);

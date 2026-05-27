@@ -87,7 +87,12 @@ function useScrollReveal() {
 }
 
 /* ===== NAVBAR ===== */
-function Navbar() {
+interface NavbarProps {
+  currentPage: string
+  navigate: (page: string) => void
+}
+
+function Navbar({ currentPage, navigate }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -105,26 +110,38 @@ function Navbar() {
   const closeMenu = useCallback(() => setMenuOpen(false), [])
 
   const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#careers', label: 'Careers' },
-    { href: '#contact', label: 'Contact' },
+    { page: 'home', label: 'Home' },
+    { page: 'about', label: 'About' },
+    { page: 'services', label: 'Services' },
+    { page: 'careers', label: 'Careers' },
+    { page: 'contact', label: 'Contact' },
   ]
+
+  const handleNavClick = (page: string) => {
+    navigate(page)
+    closeMenu()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="container">
-        <a href="#home" className="navbar-logo" aria-label="Orchid Home Health Services home">
+        <a href="#home" className="navbar-logo" aria-label="Orchid Home Health Services home" onClick={(e) => { e.preventDefault(); handleNavClick('home') }}>
           <img src="/orchid-website/images/orchid-logo.png" alt="Orchid Home Health Services" />
-          <span>Orchid Home<br />Health Services</span>
         </a>
 
         <div className="navbar-links">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={closeMenu}>{link.label}</a>
+            <a
+              key={link.page}
+              href={`#${link.page}`}
+              className={currentPage === link.page ? 'active' : ''}
+              onClick={(e) => { e.preventDefault(); handleNavClick(link.page) }}
+            >
+              {link.label}
+            </a>
           ))}
-          <a href="tel:+17172083060" className="navbar-phone" aria-label="Call (717) 208-3060">
+          <a href="tel:+171****3060" className="navbar-phone" aria-label="Call (717) 208-3060">
             <IconPhone /> (717) 208-3060
           </a>
         </div>
@@ -141,9 +158,17 @@ function Navbar() {
 
       <div className={`navbar-mobile${menuOpen ? ' open' : ''}`} role="menu">
         {navLinks.map((link) => (
-          <a key={link.href} href={link.href} role="menuitem" onClick={closeMenu}>{link.label}</a>
+          <a
+            key={link.page}
+            href={`#${link.page}`}
+            className={currentPage === link.page ? 'active' : ''}
+            role="menuitem"
+            onClick={(e) => { e.preventDefault(); handleNavClick(link.page) }}
+          >
+            {link.label}
+          </a>
         ))}
-        <a href="tel:+17172083060" className="mobile-phone" onClick={closeMenu}>
+        <a href="tel:+171****3060" className="mobile-phone" onClick={closeMenu}>
           <IconPhone /> (717) 208-3060
         </a>
       </div>
@@ -152,15 +177,15 @@ function Navbar() {
 }
 
 /* ===== HERO ===== */
-function Hero() {
+function Hero({ navigate }: { navigate: (page: string) => void }) {
   return (
     <section id="home" className="hero hero-bg">
       <div className="hero-content">
         <h1 className="reveal">You can't always be there.<br />But we can.</h1>
         <p className="reveal reveal-delay-1">We provide services in the comfort of home.</p>
         <div className="hero-buttons reveal reveal-delay-2">
-          <a href="#services" className="btn-primary">Our Services</a>
-          <a href="#contact" className="btn-secondary">Contact Us</a>
+          <a href="#services" className="btn-primary" onClick={(e) => { e.preventDefault(); navigate('services') }}>Our Services</a>
+          <a href="#contact" className="btn-secondary" onClick={(e) => { e.preventDefault(); navigate('contact') }}>Contact Us</a>
         </div>
       </div>
     </section>
@@ -416,7 +441,7 @@ function Contact() {
               <div className="icon"><IconPhone /></div>
               <div>
                 <h4>Phone</h4>
-                <a href="tel:+17172083060">(717) 208-3060</a>
+                <a href="tel:+171****3060">(717) 208-3060</a>
                 <p style={{ marginTop: 2, color: 'var(--text-secondary)' }}>(717) 435-9796</p>
               </div>
             </div>
@@ -490,7 +515,7 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-info">
             <p>&copy; 2024 Orchid Home Health Services</p>
-            <p><a href="mailto:info@orchidhomehs.com">info@orchidhomehs.com</a> &middot; <a href="tel:+17172083060">(717) 208-3060</a></p>
+            <p><a href="mailto:info@orchidhomehs.com">info@orchidhomehs.com</a> &middot; <a href="tel:+171****3060">(717) 208-3060</a></p>
           </div>
           <div className="footer-social">
             <a href="#" aria-label="Follow us on Facebook" title="Facebook"><IconFacebook /></a>
@@ -505,24 +530,124 @@ function Footer() {
   )
 }
 
-/* ===== APP ===== */
+/* ===== PAGE COMPONENTS ===== */
+
+/* Home page: Hero + About + Mission & Vision combined */
+function HomePage({ navigate }: { navigate: (page: string) => void }) {
+  return (
+    <main>
+      <Hero navigate={navigate} />
+      <About />
+      <Mission />
+    </main>
+  )
+}
+
+/* About page: About + Service Area as standalone */
+function AboutPage() {
+  return (
+    <main>
+      <About />
+      <ServiceArea />
+    </main>
+  )
+}
+
+/* Services page: Services + Why Choose Us + Insurance */
+function ServicesPage() {
+  return (
+    <main>
+      <Services />
+      <WhyChoose />
+      <Insurance />
+    </main>
+  )
+}
+
+/* Careers page: Careers standalone */
+function CareersPage() {
+  return (
+    <main>
+      <Careers />
+    </main>
+  )
+}
+
+/* Contact page: Contact standalone */
+function ContactPage() {
+  return (
+    <main>
+      <Contact />
+    </main>
+  )
+}
+
+/* ===== APP (with hash-based routing) ===== */
 function App() {
+  const [page, setPage] = useState<string>('home')
+
+  // Read initial hash
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '') || 'home'
+    setPage(hash)
+  }, [])
+
+  // Listen for hash changes (browser back/forward buttons)
+  useEffect(() => {
+    const onHashChange = () => {
+      const hash = window.location.hash.replace('#', '') || 'home'
+      setPage(hash)
+      // Re-trigger scroll reveal animations after page change
+      setTimeout(() => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible')
+              }
+            })
+          },
+          { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+        )
+        const elements = document.querySelectorAll('.reveal:not(.visible)')
+        elements.forEach((el) => observer.observe(el))
+        return () => observer.disconnect()
+      }, 50)
+    }
+
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
+  const navigate = useCallback((page: string) => {
+    window.location.hash = page
+    setPage(page)
+  }, [])
+
+  // Use scroll reveal hook which re-triggers on page changes
   useScrollReveal()
+
+  const renderPage = () => {
+    switch (page) {
+      case 'home':
+        return <HomePage navigate={navigate} />
+      case 'about':
+        return <AboutPage />
+      case 'services':
+        return <ServicesPage />
+      case 'careers':
+        return <CareersPage />
+      case 'contact':
+        return <ContactPage />
+      default:
+        return <HomePage navigate={navigate} />
+    }
+  }
 
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Mission />
-        <Services />
-        <WhyChoose />
-        <ServiceArea />
-        <Insurance />
-        <Careers />
-        <Contact />
-      </main>
+      <Navbar currentPage={page} navigate={navigate} />
+      {renderPage()}
       <Footer />
     </>
   )
