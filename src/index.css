@@ -109,9 +109,18 @@ input, textarea {
   padding: 80px 0;
 }
 
+/* First section in standalone pages needs navbar offset */
+main > .section:first-child {
+  padding-top: calc(80px + var(--nav-height));
+}
+
 @media (min-width: 768px) {
   .section {
     padding: 100px 0;
+  }
+
+  main > .section:first-child {
+    padding-top: calc(100px + var(--nav-height));
   }
 }
 
