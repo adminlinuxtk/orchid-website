@@ -116,7 +116,7 @@ function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="container">
         <a href="#home" className="navbar-logo" aria-label="Orchid Home Health Services home">
-          <img src="/images/orchid-logo.png" alt="Orchid Home Health Services" />
+          <img src="/orchid-website/images/orchid-logo.png" alt="Orchid Home Health Services" />
           <span>Orchid Home<br />Health Services</span>
         </a>
 
