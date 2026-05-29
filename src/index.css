@@ -47,30 +47,29 @@ input, textarea {
 
 /* ===== VARIABLES ===== */
 :root {
-  /* Logo wordmark → text */
+  /* Logo: "Orchid" wordmark = deep blue */
+  --brand-blue: #004AAD;
+  --brand-blue-dark: #003A8C;
+  --brand-blue-light: #EAF1FA;
+  --brand-blue-glow: rgba(0,74,173,0.08);
+
+  /* Logo: "Home Health Services" tagline = teal */
+  --brand-teal: #0097B2;
+  --brand-teal-dark: #007A94;
+  --brand-teal-light: #E6F4F8;
+
+  /* Neutrals */
   --ink: #1A1A2E;
   --ink-secondary: #5A6785;
   --ink-muted: #94A3B8;
-
-  /* Logo blue (#0048a8) → primary accent */
-  --sapphire: #2A4F7A;
-  --sapphire-dark: #1C3A5E;
-  --sapphire-light: #EAF0F7;
-  --sapphire-glow: rgba(42,79,122,0.08);
-
-  /* Logo green (#00b050) → botanical whisper */
-  --leaf: #00B050;
-  --leaf-light: #E6F7ED;
-
-  /* Canvas */
   --canvas: #FFFFFF;
   --canvas-alt: #F4F6F8;
   --hairline: #E8ECEF;
 
-  /* Shadows — sapphire-tinted */
-  --shadow-sm: 0 1px 3px rgba(42,79,122,0.06);
-  --shadow-md: 0 4px 16px rgba(42,79,122,0.10);
-  --shadow-lg: 0 8px 32px rgba(42,79,122,0.14);
+  /* Shadows — blue-tinted */
+  --shadow-sm: 0 1px 3px rgba(0,74,173,0.06);
+  --shadow-md: 0 4px 16px rgba(0,74,173,0.10);
+  --shadow-lg: 0 8px 32px rgba(0,74,173,0.14);
 
   /* Radii */
   --radius-sm: 8px;
@@ -83,12 +82,12 @@ input, textarea {
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Backward compat aliases */
-  --primary: var(--sapphire);
-  --primary-dark: var(--sapphire-dark);
-  --primary-bg: var(--sapphire-light);
-  --accent: var(--sapphire);
-  --accent-hover: var(--sapphire-dark);
-  --accent-light: var(--sapphire-light);
+  --primary: var(--brand-blue);
+  --primary-dark: var(--brand-blue-dark);
+  --primary-bg: var(--brand-blue-light);
+  --accent: var(--brand-teal);
+  --accent-hover: var(--brand-teal-dark);
+  --accent-light: var(--brand-teal-light);
   --text-primary: var(--ink);
   --text-secondary: var(--ink-secondary);
   --text-muted: var(--ink-muted);
