@@ -10,10 +10,9 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
-  color: #2d3436;
-  background: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1A1A2E;
+  background: #FFFFFF;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,29 +47,51 @@ input, textarea {
 
 /* ===== VARIABLES ===== */
 :root {
-  --primary-dark: #004AAD;
-  --primary: #0097B2;
-  --primary-light: #00B4D8;
-  --primary-bg: #E3F2FD;
-  --accent: #E8A87C;
-  --accent-hover: #E08F5A;
-  --accent-light: #FFF3EB;
-  --text-primary: #2d3436;
-  --text-secondary: #636e72;
-  --text-muted: #b2bec3;
-  --bg-white: #ffffff;
-  --bg-light: #f8f9fa;
-  --bg-dark: #004AAD;
-  --border-light: #e9ecef;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-  --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
+  /* Green accent (from logo orchid leaf) */
+  --green: #00B050;
+  --green-dark: #008A3D;
+  --green-light: #E6F7ED;
+  --green-glow: rgba(0,176,80,0.08);
+
+  /* Neutrals */
+  --ink: #1A1A2E;
+  --ink-secondary: #5A6785;
+  --ink-muted: #94A3B8;
+  --canvas: #FFFFFF;
+  --canvas-alt: #F8FAF9;
+  --hairline: #E8ECEF;
+
+  /* Shadows — green-tinted */
+  --shadow-sm: 0 1px 3px rgba(0,176,80,0.06);
+  --shadow-md: 0 4px 16px rgba(0,176,80,0.10);
+  --shadow-lg: 0 8px 32px rgba(0,176,80,0.12);
+
+  /* Radii */
   --radius-sm: 8px;
-  --radius-md: 12px;
+  --radius-md: 14px;
   --radius-lg: 20px;
-  --max-width: 1200px;
+
+  /* Layout */
+  --container: 1728px;
   --nav-height: 72px;
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Backward compat aliases */
+  --primary: var(--green);
+  --primary-dark: var(--green-dark);
+  --primary-bg: var(--green-light);
+  --primary-light: #33C26B;
+  --accent: var(--green);
+  --accent-hover: var(--green-dark);
+  --accent-light: var(--green-light);
+  --text-primary: var(--ink);
+  --text-secondary: var(--ink-secondary);
+  --text-muted: var(--ink-muted);
+  --bg-white: var(--canvas);
+  --bg-light: var(--canvas-alt);
+  --bg-dark: #0F172A;
+  --border-light: var(--hairline);
+  --max-width: var(--container);
 }
 
 /* ===== REVEAL ANIMATIONS ===== */
@@ -94,62 +115,61 @@ input, textarea {
 /* ===== UTILITY ===== */
 .container {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: var(--container);
   margin: 0 auto;
   padding: 0 24px;
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 0 40px;
+    padding: 0 48px;
   }
 }
 
 .section {
-  padding: 80px 0;
+  padding: 96px 0;
 }
 
-/* First section in standalone pages needs navbar offset */
 main > .section:first-child {
-  padding-top: calc(80px + var(--nav-height));
+  padding-top: calc(96px + var(--nav-height));
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .section {
-    padding: 100px 0;
+    padding: 64px 0;
   }
-
   main > .section:first-child {
-    padding-top: calc(100px + var(--nav-height));
+    padding-top: calc(64px + var(--nav-height));
   }
 }
 
 .section-title {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--ink);
   text-align: center;
   margin-bottom: 12px;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 @media (min-width: 768px) {
   .section-title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 }
 
 .section-subtitle {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  color: var(--ink-secondary);
   text-align: center;
-  max-width: 650px;
-  margin: 0 auto 48px;
-  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto 56px;
+  line-height: 1.65;
 }
 
 @media (min-width: 768px) {
   .section-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 }
