@@ -1,6 +1,6 @@
 /* =============================================
    ORCHID HOME HEALTH SERVICES — APP.CSS
-   Clean modern. Logo-inspired palette. Minimal leaf.
+   Modern home care vibe. Green accent. Clean.
    ============================================= */
 
 /* ===== NAVBAR ===== */
@@ -70,20 +70,20 @@
   transform: translateX(-50%) scaleX(0);
   width: 50%;
   height: 2px;
-  background: var(--sapphire);
+  background: var(--green);
   border-radius: 1px;
   transition: transform 0.2s ease;
 }
 
 .navbar-links a:hover {
-  color: var(--sapphire);
-  background: var(--sapphire-light);
+  color: var(--green);
+  background: var(--green-light);
 }
 
 .navbar-links a.active {
-  color: var(--sapphire-dark);
+  color: var(--green-dark);
   font-weight: 600;
-  background: var(--sapphire-light);
+  background: var(--green-light);
 }
 
 .navbar-links a.active::after {
@@ -95,7 +95,7 @@
   align-items: center;
   gap: 7px;
   padding: 10px 22px;
-  background: var(--sapphire);
+  background: var(--green);
   color: white;
   border-radius: 10px;
   font-size: 0.88rem;
@@ -113,9 +113,9 @@
 
 .navbar-cta:hover,
 .navbar-cta:focus-visible {
-  background: var(--sapphire-dark);
+  background: var(--green-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px var(--sapphire-glow);
+  box-shadow: 0 4px 14px var(--green-glow);
 }
 
 .navbar-cta svg {
@@ -192,8 +192,8 @@
 
 .navbar-mobile a:hover,
 .navbar-mobile a.active {
-  background: var(--sapphire-light);
-  color: var(--sapphire-dark);
+  background: var(--green-light);
+  color: var(--green-dark);
 }
 
 .navbar-mobile .mobile-cta {
@@ -203,7 +203,7 @@
   gap: 8px;
   margin-top: 12px;
   padding: 14px;
-  background: var(--sapphire);
+  background: var(--green);
   color: white;
   border-radius: 10px;
   font-weight: 600;
@@ -277,7 +277,7 @@
 .hero-tag {
   display: inline-block;
   padding: 6px 16px;
-  background: var(--leaf);
+  background: var(--green);
   color: white;
   border-radius: 50px;
   font-size: 0.8rem;
@@ -298,7 +298,7 @@
 
 .hero-text h1 strong {
   font-weight: 400;
-  color: var(--leaf);
+  color: var(--green-dark);
 }
 
 @media (min-width: 768px) {
@@ -375,10 +375,10 @@
   position: absolute;
   bottom: -14px; right: -14px;
   width: 100%; height: 100%;
-  border: 2px solid var(--leaf);
+  border: 2px solid var(--green);
   border-radius: var(--radius-lg);
   z-index: 0;
-  opacity: 0.06;
+  opacity: 0.08;
   pointer-events: none;
 }
 
@@ -407,7 +407,7 @@
   display: block;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--sapphire);
+  color: var(--green-dark);
 }
 
 .hero-stat span {
@@ -433,7 +433,7 @@
   align-items: center;
   justify-content: center;
   padding: 14px 32px;
-  background: var(--sapphire);
+  background: var(--green);
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -444,9 +444,9 @@
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: var(--sapphire-dark);
+  background: var(--green-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px var(--sapphire-glow);
+  box-shadow: 0 6px 24px var(--green-glow);
 }
 
 .btn-primary:active {
@@ -459,10 +459,10 @@
   justify-content: center;
   padding: 14px 32px;
   background: transparent;
-  color: var(--sapphire-dark);
+  color: var(--green-dark);
   font-size: 1rem;
   font-weight: 600;
-  border: 2px solid var(--sapphire);
+  border: 2px solid var(--green);
   border-radius: 10px;
   min-width: 170px;
   transition: background var(--transition), transform var(--transition);
@@ -470,7 +470,7 @@
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
-  background: var(--sapphire-light);
+  background: var(--green-light);
   transform: translateY(-2px);
 }
 
@@ -539,8 +539,8 @@
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: var(--sapphire-light);
-  color: var(--sapphire-dark);
+  background: var(--green-light);
+  color: var(--green-dark);
   border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -595,8 +595,8 @@
 }
 
 .mission-card .icon {
-  background: var(--sapphire-light);
-  color: var(--sapphire);
+  background: var(--green-light);
+  color: var(--green);
 }
 
 .mission-card h3 {
@@ -616,7 +616,7 @@
   grid-column: 1 / -1;
   text-align: center;
   padding: 40px 32px;
-  background: var(--sapphire);
+  background: var(--green);
   border-radius: var(--radius-lg);
   color: white;
   margin-top: 8px;
@@ -688,8 +688,8 @@
 .service-card .icon {
   width: 44px; height: 44px;
   border-radius: 50%;
-  background: var(--sapphire-light);
-  color: var(--sapphire);
+  background: var(--green-light);
+  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -760,8 +760,8 @@
 .why-card .icon {
   width: 52px; height: 52px;
   border-radius: 50%;
-  background: var(--sapphire-light);
-  color: var(--sapphire);
+  background: var(--green-light);
+  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -796,8 +796,8 @@
 
 .county-tag {
   padding: 10px 22px;
-  background: var(--sapphire-light);
-  color: var(--sapphire-dark);
+  background: var(--green-light);
+  color: var(--green-dark);
   border-radius: 10px;
   font-size: 0.92rem;
   font-weight: 600;
@@ -805,7 +805,7 @@
 }
 
 .county-tag:hover {
-  background: var(--sapphire);
+  background: var(--green);
   color: white;
   transform: translateY(-2px);
 }
@@ -836,7 +836,7 @@
 }
 
 .insurance-badge:hover {
-  border-color: var(--sapphire);
+  border-color: var(--green);
   box-shadow: var(--shadow-sm);
   transform: translateY(-2px);
 }
@@ -895,8 +895,8 @@
 
 .careers-benefits span {
   padding: 10px 20px;
-  background: var(--sapphire-light);
-  color: var(--sapphire-dark);
+  background: var(--green-light);
+  color: var(--green-dark);
   border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -955,8 +955,8 @@
 .contact-item .icon {
   width: 44px; height: 44px;
   border-radius: 50%;
-  background: var(--sapphire-light);
-  color: var(--sapphire);
+  background: var(--green-light);
+  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -980,7 +980,7 @@
 }
 
 .contact-item a:hover {
-  color: var(--sapphire);
+  color: var(--green);
 }
 
 .contact-map {
@@ -1017,7 +1017,7 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: var(--sapphire);
+  border-color: var(--green);
   background: var(--canvas);
 }
 
@@ -1033,7 +1033,7 @@
 
 .contact-form button {
   padding: 15px 32px;
-  background: var(--sapphire);
+  background: var(--green);
   color: white;
   font-size: 1rem;
   font-weight: 600;
@@ -1044,14 +1044,14 @@
 
 .contact-form button:hover,
 .contact-form button:focus-visible {
-  background: var(--sapphire-dark);
+  background: var(--green-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px var(--sapphire-glow);
+  box-shadow: 0 6px 24px var(--green-glow);
 }
 
 /* ===== CTA BANNER ===== */
 .cta-banner {
-  background: var(--sapphire);
+  background: var(--green);
   color: white;
   padding: 72px 0;
   text-align: center;
@@ -1076,7 +1076,7 @@
 
 .cta-banner .btn-primary {
   background: white;
-  color: var(--sapphire-dark);
+  color: var(--green-dark);
 }
 
 .cta-banner .btn-primary:hover {
@@ -1136,7 +1136,7 @@
 }
 
 .footer-brand a:hover {
-  color: var(--sapphire);
+  color: var(--green);
 }
 
 .footer-col h4 {
@@ -1159,7 +1159,7 @@
 }
 
 .footer-col a:hover {
-  color: var(--sapphire);
+  color: var(--green);
 }
 
 .footer-social {
@@ -1186,7 +1186,7 @@
 }
 
 .footer-social a:hover {
-  background: var(--sapphire);
+  background: var(--green);
   color: white;
 }
 

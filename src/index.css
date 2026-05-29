@@ -47,24 +47,30 @@ input, textarea {
 
 /* ===== VARIABLES ===== */
 :root {
-  /* Green accent (from logo orchid leaf) */
-  --green: #00B050;
-  --green-dark: #008A3D;
-  --green-light: #E6F7ED;
-  --green-glow: rgba(0,176,80,0.08);
-
-  /* Neutrals */
+  /* Logo wordmark → text */
   --ink: #1A1A2E;
   --ink-secondary: #5A6785;
   --ink-muted: #94A3B8;
+
+  /* Logo blue (#0048a8) → primary accent */
+  --sapphire: #2A4F7A;
+  --sapphire-dark: #1C3A5E;
+  --sapphire-light: #EAF0F7;
+  --sapphire-glow: rgba(42,79,122,0.08);
+
+  /* Logo green (#00b050) → botanical whisper */
+  --leaf: #00B050;
+  --leaf-light: #E6F7ED;
+
+  /* Canvas */
   --canvas: #FFFFFF;
-  --canvas-alt: #F8FAF9;
+  --canvas-alt: #F4F6F8;
   --hairline: #E8ECEF;
 
-  /* Shadows — green-tinted */
-  --shadow-sm: 0 1px 3px rgba(0,176,80,0.06);
-  --shadow-md: 0 4px 16px rgba(0,176,80,0.10);
-  --shadow-lg: 0 8px 32px rgba(0,176,80,0.12);
+  /* Shadows — sapphire-tinted */
+  --shadow-sm: 0 1px 3px rgba(42,79,122,0.06);
+  --shadow-md: 0 4px 16px rgba(42,79,122,0.10);
+  --shadow-lg: 0 8px 32px rgba(42,79,122,0.14);
 
   /* Radii */
   --radius-sm: 8px;
@@ -77,13 +83,12 @@ input, textarea {
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Backward compat aliases */
-  --primary: var(--green);
-  --primary-dark: var(--green-dark);
-  --primary-bg: var(--green-light);
-  --primary-light: #33C26B;
-  --accent: var(--green);
-  --accent-hover: var(--green-dark);
-  --accent-light: var(--green-light);
+  --primary: var(--sapphire);
+  --primary-dark: var(--sapphire-dark);
+  --primary-bg: var(--sapphire-light);
+  --accent: var(--sapphire);
+  --accent-hover: var(--sapphire-dark);
+  --accent-light: var(--sapphire-light);
   --text-primary: var(--ink);
   --text-secondary: var(--ink-secondary);
   --text-muted: var(--ink-muted);
